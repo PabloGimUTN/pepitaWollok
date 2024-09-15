@@ -1,0 +1,30 @@
+import example.*
+
+
+describe "La velocidad de Tom depende de su energía. "{
+	test " si tiene 20 joules de energía, su velocidad debería ser 7"{
+		tom.energia(20)
+		assert.equals(7, tom.velocidad())
+	}
+
+	test "tom come raton"{
+		tom.comeRaton(jerry)
+		assert.equals(132, tom.energia())
+	}	
+
+	test "tom corre con 100 de vida mientras mas energia mas pierde de energia"{
+		tom.corre(3)
+		assert.equals(77.5,tom.energia())
+	}
+
+	test "tom no corre nada"{
+		tom.corre(100)
+		assert.equals(0,tom.energia())
+	}
+
+	test "tom corre con menos vida"{
+		tom.energia(20)
+		tom.corre(3)
+		assert.equals(9.5,tom.energia())
+	}
+}
