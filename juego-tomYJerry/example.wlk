@@ -4,7 +4,7 @@ object tom{
   method velocidad() = 5 + (self.energia() / 10)
 
   method comeRaton(raton){
-    energia = self.cuantoDaEnergia(raton)
+    energia +=  self.cuantoDaEnergiaRaton(raton)
   }
 
   method corre(segundos){
@@ -12,12 +12,12 @@ object tom{
   }
 
   method meConvieneComerRatonA(unRaton,unaDistancia){
-      const energiaQueDaRaton = self.cuantoDaEnergia(unRaton)
+      const energiaQueDaRaton = self.cuantoDaEnergiaRaton(unRaton)
       const energiaQueGastaCorriendo = self.cuantaEnergiaGastaCorriendo(unaDistancia)    
       return energiaQueDaRaton > energiaQueGastaCorriendo
   }
   
-  method cuantoDaEnergia(unRaton) = energia + 12 + unRaton.pesoGramos()
+  method cuantoDaEnergiaRaton(unRaton) =  12 + unRaton.pesoGramos()
 
   method cuantaEnergiaGastaCorriendo (unaDistancia) = unaDistancia / self.velocidad()
 
