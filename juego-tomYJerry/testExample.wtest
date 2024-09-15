@@ -32,7 +32,12 @@ describe "La velocidad de Tom depende de su energía. "{
 		assert.notThat(tom.meConvieneComerRatonA(jerry,2000000))
 	}
 
-	test "tom conviene comer raton"{
+	test "tom conviene comer raton con bastante distancia"{
 		assert.that(tom.meConvieneComerRatonA(jerry,479))
+	}
+
+	test "tom conviene comer raton con poca distancia y mitad de energia"{
+		tom.energia(50)
+		assert.that(tom.meConvieneComerRatonA(jerry,3))
 	}
 }
