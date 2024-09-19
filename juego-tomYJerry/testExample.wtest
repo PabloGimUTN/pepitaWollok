@@ -1,43 +1,49 @@
 import example.*
 
 
-describe "La velocidad de Tom depende de su energía. "{
-	test " si tiene 20 joules de energía, su velocidad debería ser 7"{
-		tom.energia(20)
-		assert.equals(7, tom.velocidad())
-	}
+describe "test de williWonka"{
 
-	test "tom come raton"{
-		tom.comeRaton(jerry)
-		assert.equals(132, tom.energia())
-	}	
 
-	test "tom corre con 100 de vida mientras mas energia mas pierde de energia"{
-		tom.corre(3)
-		assert.equals(77.5,tom.energia())
-	}
+    test "Asignamos empleado y agregamos proyecto"{
+        williWonka.contratarUmpaLumpa(estebanTrabajos)
+        williWonka.agregarProyecto(cardbury)
+        assert.equals(cardbury.empleados(),#{estebanTrabajos})
+        williWonka.pasarDia()
+        assert.equals(0,cardbury.features())
+    }
 
-	test "tom no corre nada"{
-		tom.corre(100)
-		assert.equals(0,tom.energia())
-	}
+    //     test "proyecto inconcluso"{
+    //     williWonka.contratarUmpaLumpa(estebanTrabajos)
+    //     williWonka.agregarProyecto(cardbury)
+    //     assert.equals(cardbury.empleados(),#{estebanTrabajos})
+    //     williWonka.pasarDia()
+    //     assert.equals(0,cardbury.features())
+    //     assert.equals(#{}, williWonka.proyectosInconclusos())
+    // }
 
-	test "tom corre con menos vida"{
-		tom.energia(20)
-		tom.corre(3)
-		assert.equals(9.5,tom.energia())
-	}
+    //   test "proyecto prueba"{
+    //     williWonka.contratarUmpaLumpa(estebanTrabajos)
+    //     williWonka.contratarUmpaLumpa(guillermoPuertas)
+    //     williWonka.contratarUmpaLumpa(juanCarlos)
+    //     williWonka.agregarProyecto(verduleria)
+    //     assert.equals(cardbury.empleados(),#{estebanTrabajos})
+    //     williWonka.pasarDia()
+    //     assert.equals(0,cardbury.features())
+    //     assert.equals(#{}, williWonka.proyectosInconclusos())
+    // }
 
-	test "tom conviene comer raton con mucha distancia"{
-		assert.notThat(tom.meConvieneComerRatonA(jerry,2000000))
-	}
 
-	test "tom conviene comer raton con bastante distancia"{
-		assert.that(tom.meConvieneComerRatonA(jerry,479))
-	}
+      test "proyecto inconcluso"{
+        williWonka.contratarUmpaLumpa(estebanTrabajos)
+        williWonka.contratarUmpaLumpa(guillermoPuertas)
+        williWonka.contratarUmpaLumpa(juanCarlos)
+        williWonka.agregarProyecto(verduleria)
+        williWonka.agregarProyecto(vaporware)
+        williWonka.motivarEmpleados()
+        williWonka.pasarDia()
+        assert.equals(#{vaporware,verduleria}, williWonka.proyectosInconclusos())
+    }
 
-	test "tom conviene comer raton con poca distancia y mitad de energia"{
-		tom.energia(50)
-		assert.that(tom.meConvieneComerRatonA(jerry,3))
-	}
+
+
 }
